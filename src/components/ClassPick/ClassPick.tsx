@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './ClassPick.module.css';
-import {Select, Box} from '@chakra-ui/react'
+import {Select, Box, Grid} from '@chakra-ui/react'
 
 function ClassPick(){
  function getInitialState(){
@@ -10,8 +10,6 @@ function ClassPick(){
 }
 
    function handleChange(event){
-    console.log(event.target.value);
-    console.log("SENT");
     getName(event.target.value);
   }
 function getName(mains){
@@ -20,6 +18,7 @@ function getName(mains){
                   .then((response) =>{
                     return response.json()})
                   .then(data =>{
+                    data.results.sort((a, b) =>a.level.localeCompare(b.level))
                     setSpells(data.results);
                   });
 }
@@ -54,21 +53,27 @@ return(
   
   <div className={styles.ClassPick}>
     <Box>
-    <Select bg="white" color="black"  name="classList">
+    <Select onChange={handleChange} bg="white" color="black"  name="classList">
       <option disabled selected>Select First Class </option>
         {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
         </Select>
-       
-        <Select bg="white" color="black" onChange={handleChange}>
-        <option disabled selected>Select Second Class </option>
-        {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
-        </Select>
-        <Select bg="white" color="black">
-      <option  selected>Select a Spell </option>
-        {spells.map(s =>(<option key={!s.cantrip}>{s.name }</option>))}
-        </Select>
-     {spells.map(d =>(<p key={!d.cantrip}>{d.description}</p>))}
-     </Box>
+    </Box>
+    <Box>
+      <table>
+        <thead>
+          <tr>
+            <th>Spell Name</th>
+            <th>Spell Level</th>
+          </tr>
+        </thead>
+        <tbody>
+        {spells.map((d) => <tr key={d.id}>
+          <td>{d.name}</td>
+          <td>{d.level}</td>
+        </tr>)}
+        </tbody>
+      </table>
+      </Box>
   </div>
 );
 }

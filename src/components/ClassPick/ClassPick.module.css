@@ -6,3 +6,19 @@ ul{
 	list-style: none;
 	text-align: left;
 }
+
+table{
+	font-size:0.8em;
+}
+
+tbody{
+	text-align: left;
+}
+th{
+	text-decoration: underline;
+	padding:10px;
+}
+
+td{
+	padding:5px;
+}
