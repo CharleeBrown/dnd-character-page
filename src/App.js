@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ClassPick from './components/ClassPick/ClassPick'
+import ClassPick from './components/ClassPick/ClassPick.tsx'
 function App() {
   return (
     <div className="App">
