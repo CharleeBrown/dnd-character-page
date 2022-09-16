@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ClassPick from './components/ClassPick/ClassPick.tsx'
-import {ChakraProvider} from  'chakra-ui'
+import {ChakraProvider} from  '@chakra-ui/react'
 function App() {
   return (
     <ChakraProvider>
