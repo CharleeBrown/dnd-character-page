@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './ClassPick.module.css';
-
+import {Select, Box} from '@chakra-ui/react'
 
 function ClassPick(){
  function getInitialState(){
@@ -51,21 +51,24 @@ fetchData()
 },[])
 
 return(
+  
   <div className={styles.ClassPick}>
-    <select onChange={handleChange} name="classList">
+    <Box>
+    <Select bg="white" color="black" onChange={handleChange} name="classList">
       <option disabled selected>Select First Class </option>
         {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
-        </select>
+        </Select>
        
-        <select >
-        <option disabled selected>Select second Class </option>
+        <Select bg="white" color="black" >
+        <option disabled selected>Select Second Class </option>
         {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
-        </select>
-        <select>
+        </Select>
+        <Select bg="white" color="black">
       <option  selected>Select a Spell </option>
         {spells.map(s =>(<option key={!s.cantrip}>{s.name }</option>))}
-        </select>
+        </Select>
      {spells.map(d =>(<p key={!d.cantrip}>{d.description}</p>))}
+     </Box>
   </div>
 );
 }
