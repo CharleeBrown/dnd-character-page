@@ -54,12 +54,12 @@ return(
   
   <div className={styles.ClassPick}>
     <Box>
-    <Select bg="white" color="black" onChange={handleChange} name="classList">
+    <Select bg="white" color="black"  name="classList">
       <option disabled selected>Select First Class </option>
         {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
         </Select>
        
-        <Select bg="white" color="black" >
+        <Select bg="white" color="black" onChange={handleChange}>
         <option disabled selected>Select Second Class </option>
         {names.map(n =>(<option   key={n.slug}>{n.name}</option>))}
         </Select>
