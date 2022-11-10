@@ -22,6 +22,7 @@ function getName(mains){
                     setSpells(data.results);
                   });
 }
+
 function setters() {
   this.setState({ 
     isDisabled: false
