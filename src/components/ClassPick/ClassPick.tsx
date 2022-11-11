@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styles from './ClassPick.module.css';
-import {Select, Box, Grid} from '@chakra-ui/react'
+import {Select, Box, Text, Grid} from '@chakra-ui/react'
 
 function ClassPick(){
  function getInitialState(){
@@ -60,17 +60,17 @@ return(
         </Select>
     </Box>
     <Box>
-      <div class="rTable">
-		<div class="rTableHeading">
-				<div class="row rTableRow">
-						<div class="col rTableHead">Spell Name</div>
-						<div class="col rTableHead">Spell Level</div>
+      <div className="rTable">
+		<div className="rTableHeading">
+				<div className="row rTableRow">
+						<div className="col-lg rTableHead"><Text as='u'>Spell</Text></div>
+						<div className="col rTableHead"><Text as='u'>Level</Text></div>
 				</div>
 		</div>
-	<div class="rTableBody">
+	<div className="rTableBody">
         {spells.map((d) => <div class="row">
-					<div class="col-lg rTableCell">{d.name}</div>
-					<div class="col-sm rTableCell">{d.level}</div>
+         <div className="col-lg" >{d.name}</div>
+					<div className="col-sm">{d.level}</div>
 			</div>)}
 	</div>
 </div>

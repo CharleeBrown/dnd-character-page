@@ -1,34 +1,14 @@
-.ClassPick {
-	
-}
 
 ul{
 	list-style: none;
 	text-align: left;
 }
 
-table{
-	font-size:0.8em;
-}
-
-tbody{
-	text-align: left;
-}
-th{
-	text-decoration: underline;
-	padding:10px;
-}
-
-#rTableCell{
+.rTableCell{
 	padding:5px;
 	display:inline-block;
 }
-table tbody td:nth-child(2) {
-	font-size:0.5em !important;
-}
 
-#rTableBody{
-	display:inline-block;
-}
 
-#rTableHead{}
+
+
