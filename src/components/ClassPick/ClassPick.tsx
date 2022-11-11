@@ -69,8 +69,8 @@ return(
         </thead>
         <tbody>
         {spells.map((d) => <tr key={d.id}>
-          <td>{d.name}</td>
-          <td>{d.level}</td>
+          <td  id="levels">{d.name}</td>
+          <td id="levels">{d.level}</td>
         </tr>)}
         </tbody>
       </table>
