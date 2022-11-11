@@ -60,20 +60,20 @@ return(
         </Select>
     </Box>
     <Box>
-      <table>
-        <thead>
-          <tr>
-            <th>Spell Name</th>
-            <th>Spell Level</th>
-          </tr>
-        </thead>
-        <tbody>
-        {spells.map((d) => <tr key={d.id}>
-          <td  id="levels">{d.name}</td>
-          <td id="levels">{d.level}</td>
-        </tr>)}
-        </tbody>
-      </table>
+      <div class="rTable">
+		<div class="rTableHeading">
+				<div class="row rTableRow">
+						<div class="col rTableHead">Spell Name</div>
+						<div class="col rTableHead">Spell Level</div>
+				</div>
+		</div>
+	<div class="rTableBody">
+        {spells.map((d) => <div class="row">
+					<div class="col-lg rTableCell">{d.name}</div>
+					<div class="col-sm rTableCell">{d.level}</div>
+			</div>)}
+	</div>
+</div>
       </Box>
   </div>
 );
